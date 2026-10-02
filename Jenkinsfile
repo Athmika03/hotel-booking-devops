@@ -11,7 +11,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'python -m unittest test_app -v'
+                bat '''
+                    "C:\\Users\\HP\\AppData\\Local\\Python\\bin\\python.exe" -m venv .venv
+                    .venv\\Scripts\\python.exe -m pip install -r requirements.txt
+                    .venv\\Scripts\\python.exe -m unittest test_app -v
+                '''
             }
         }
 
