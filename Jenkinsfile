@@ -1,8 +1,8 @@
+
 pipeline {
     agent any
 
     stages {
-
         stage('Build') {
             steps {
                 echo 'Building Hotel Booking application...'
@@ -11,7 +11,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running application checks...'
+                bat 'python -m unittest test_app -v'
             }
         }
 
